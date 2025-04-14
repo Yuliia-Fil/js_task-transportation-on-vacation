@@ -11,15 +11,15 @@ function calculateRentalCost(days) {
   const shortTermDiscount = 20;
   const longTermDiscount = 50;
 
-  if (days < shortTerm) {
-    return sum;
+  if (days >= longTerm) {
+    return sum - longTermDiscount;
   }
 
-  if (days < longTerm) {
+  if (days >= shortTerm) {
     return sum - shortTermDiscount;
   }
 
-  return sum - longTermDiscount;
+  return sum;
 }
 
 module.exports = calculateRentalCost;
